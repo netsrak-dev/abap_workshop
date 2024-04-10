@@ -34,7 +34,7 @@ CLASS zcl_aw_part_value IMPLEMENTATION.
   METHOD zif_aw_part_value~value_return_dynamic.
 
     IF i_return_address = abap_true.
-      e_result =  VALUE zif_aw_types=>address( ).
+      e_result = VALUE zif_aw_types=>address( ).
     ELSEIF i_return_person = abap_true.
       e_result = VALUE zif_aw_types=>person( ).
     ELSE.
@@ -44,7 +44,8 @@ CLASS zcl_aw_part_value IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD zif_aw_part_value~value_fill_table_for_next.
-    result = VALUE #( FOR i = 0 WHILE i <= 4 ( substring( off = i val = sy-abcde len = 1 ) ) ).
+    result = VALUE #( FOR i = 0 WHILE i <= 4 ( substring( off = i 
+                                                          val = sy-abcde len = 1 ) ) ).
   ENDMETHOD.
 
 ENDCLASS.
